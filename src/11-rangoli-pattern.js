@@ -37,4 +37,16 @@
  */
 export function rangoli(n) {
   // Your code here
+  if (!Number.isInteger(n) || n <= 0) return [];
+
+  let topHalf = [];
+  for (let i = 1; i <= n; i++) {
+    let space = " ".repeat(n - i);
+    let star = "* ".repeat(i).trim();
+    topHalf.push(space + star);
+  }
+  let bottomHalf=[]
+  bottomHalf = topHalf.slice(0,-1).reverse()
+  console.log(topHalf.concat(bottomHalf))
+  return topHalf.concat(bottomHalf)
 }
